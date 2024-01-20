@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./styles.css";
 
 function SiteContent({ children }) {
-  return 
+  return (
   <div className="siteContent">
-    <ContentBlock/>
-  </div>;
+    <ContentBlock text={"kdkaka"}/>
+  </div>
+  );
 }
 
 function Header({ text }) {
