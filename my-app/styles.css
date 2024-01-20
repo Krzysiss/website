@@ -1,0 +1,96 @@
+.header{
+    width: 70%;
+    height: 5%;
+    left: 30%;
+    background: #90e0ef;
+    position: absolute;
+    text-align: center;
+    border: #48cae4;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 0px;
+}
+
+.siteContent{
+    position: block;
+    height: 95%;
+    width: 70%;
+    left: 30%;
+    top: 5% + 1px;
+    background:#ade8f4;
+    justify-content: center;
+}
+
+.head{
+    border-color: #48cae4;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    vertical-align: top;
+    background: #90e0ef;
+    text-align: center;
+
+    position: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: inherit;
+    top: 0px;
+    width: 100%;
+    height: 5%;
+}
+
+head:hover{
+    cursor: pointer;
+    background: #ade8f4;
+    border-radius: 2%;
+}
+
+.contentBlock{
+    width: 100%;
+    height: 10%;
+    border-color: #48cae4;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    vertical-align: top;
+    background: #90e0ef;
+    text-align: center;
+}
+
+.cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    width: 100%;
+    height: 3%
+}
+
+.cell:hover{
+    cursor: pointer;
+    background: #ade8f4;
+}
+
+.sidePanel{
+    background: #90e0ef;
+    border-color: #48cae4;
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 0px;
+    position: inherit;
+    top: 50px;
+    left: inherit;
+    height: 100%;
+    width: 30%;
+}
+
+body{
+    font-family: 'Trebuchet MS';
+    display: block;
+    background: #ade8f4;
+    color: #03045e;
+
+    width: 100%;
+    height: 100%;
+}
