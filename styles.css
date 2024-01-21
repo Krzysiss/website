@@ -1,7 +1,7 @@
 .header{
-    width: 80%;
+    width: 75%;
     height: 5%;
-    left: 20%;
+    left: 25%;
     background: #90e0ef;
     position: absolute;
     text-align: center;
@@ -14,8 +14,8 @@
 .siteContent{
     position: absolute;
     height: 95%;
-    width: 80%;
-    left: 20%;
+    width: 75%;
+    left: 25%;
     top: 5%;
     background:#ade8f4;
     justify-content: center;
@@ -84,7 +84,7 @@ head:hover{
     top: 50px;
     left: inherit;
     height: 100%;
-    width: 20%;
+    width: 25%;
 }
 
 body{

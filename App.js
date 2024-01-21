@@ -18,7 +18,7 @@ function ContentBox({name}){
   const content = ducks[name];
   return (
     <div style={{display: "inline-block"}}>
-      <ContentBlock text={content.Name} content={<ImageBlock src={content.Image}/>}/>
+      <ContentBlock text={name} content={<ImageBlock src={content.Image}/>}/>
       <SummaryBlock name={name}/>
     </div>
   );
@@ -79,7 +79,7 @@ function SidePanelCell({ text}) {
   );
 }
 
-function SidePanel({ onItemClick }) {
+function SidePanel() {
   return (
     <div className="sidePanel">
       <Head text="Quackk! - Design Doc" />
@@ -92,12 +92,21 @@ function SidePanel({ onItemClick }) {
   );
 }
 
-function SiteContent({ children }) {
+function SiteContent(){
   return (
   <div className="siteContent">
+    <h3>Ducks</h3>
     <ContentBox name={"Duck Dad"}/>
     <ContentBox name={"Duck Mom"}/>
     <ContentBox name={"Duck Brother"}/>
+    <ContentBox name={"Duck Grandpa"}/>
+    <ContentBox name={"Duck Granny"}/>
+    <ContentBox name={"Puddle"}/>
+    <ContentBox name={"Puddle's Son"}/>
+    <ContentBox name={"Puddle's Mom"}/>
+    <ContentBox name={"Shoal"}/>
+    <ContentBox name={"Shoal's Wife"}/>
+    <ContentBox name={"Quill"}/>
   </div>
   );
 }
