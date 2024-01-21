@@ -1,0 +1,83 @@
+{
+    "npc":{
+        "Ducks":{
+            "Duck Dad":{
+                "Name": "Clifton",
+                "Job": "Grocery Store",
+                "Description": "",
+                "Work": "Everyday 3pm-10pm",
+                "Image": "https://cdn.discordapp.com/attachments/1139225129105240064/1189256914677272587/duckDad.png?ex=659d80cf&is=658b0bcf&hm=bd9bc25820f545f55155727d1b22fd8ba208df47e2305d0c7d9166a40a214fc7&"
+            },
+            "Duck Mom":{
+                "Name": "Daisy",
+                "Job": "Library",
+                "Description": "classic mom",
+                "Work": "Mon-Sat: 9am-3pm, Sunday: Not working",
+                "Image": "https://cdn.discordapp.com/attachments/1139225129105240064/1189256594270208122/duckMom.png?ex=659d8083&is=658b0b83&hm=faee932838b3919613143e1888399c35b02aa85e0ec2fe48fc3b68ba2d1f46e3&"
+            },
+            "Duck Brother":{
+                "Name": "Oliver",
+                "Job": "Grocery Store",
+                "Description": "Around 17yo. Little bit smaller than the player",
+                "Work": "Mon-Sat: 8am-6pm",
+                "Image": ""
+            },
+            "Duck Grandpa":{
+                "Name": "Wallace",
+                "Job": "Fish Market",
+                "Description": "",
+                "Work": "",
+                "Image": ""
+            },
+            "Duck Granny":{
+                "Name": "",
+                "Job": "Library",
+                "Description": "",
+                "Work": "",
+                "Image": ""
+            },
+            "Puddle":{
+                "Name": "Puddle",
+                "Job": "Fish Market",
+                "Description": "",
+                "Work": "",
+                "Image": ""
+            },
+            "Puddle's Son":{
+                "Name": "Splash",
+                "Job": "none",
+                "Description": "",
+                "Work": "",
+                "Image": "https://cdn.discordapp.com/attachments/1139225129105240064/1189257369268527195/paddleSon.png?ex=659d813c&is=658b0c3c&hm=dc2a04563760bdefcba54e00102bbadf8453c63a1ded6bd743730dbaf8c6a2de&"
+            },
+            "Puddle's Mom":{
+                "Name": "Rainara",
+                "Job": "Cleaning Park",
+                "Description": "",
+                "Work": "",
+                "Image": ""
+            },
+            "Shoal":{
+                "Name": "Shoal",
+                "Job": "Fish Market",
+                "Description": "",
+                "Work": "",
+                "Image": ""
+            },
+            "Shoal's Wife":{
+                "Name": "Salina",
+                "Job": "Cleaning Park",
+                "Description": "",
+                "Work": "",
+                "Image": ""
+            },
+            "Quill":{
+                "Name": "Quill",
+                "Job": "Selling wood",
+                "Description": "Literally the stranger in the village. Have wooden leg and glasses. Is abonended by family.",
+                "Work": "",
+                "Image": ""
+            }
+        }
+    }
+}

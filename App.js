@@ -1,13 +1,59 @@
 import React, { useState } from "react";
 import "./styles.css";
+import jsonData from "./contents.json";
 
-function SiteContent({ children }) {
+const content = jsonData.npc;
+const ducks = content.Ducks;
+
+function ContentBlock({ text, content }) {
   return (
-  <div className="siteContent">
-    <ContentBlock text={"kdkaka"}/>
-  </div>
+    <div className="contentBlock">
+      <div>{text}</div>
+      <div>{content}</div>
+    </div>
   );
 }
+
+function ContentBox({name}){
+  const content = ducks[name];
+  return (
+    <div style={{display: "inline-block"}}>
+      <ContentBlock text={content.Name} content={<ImageBlock src={content.Image}/>}/>
+      <SummaryBlock name={name}/>
+    </div>
+  );
+}
+
+function ImageBlock({ src}) {
+  const imageStyle = {
+    maxWidth: '100%', // Ensure the image does not exceed its container width
+    height: 'auto',
+  };
+
+  return (
+      <img src={src} style={imageStyle} />
+  );
+  }
+
+  function SummaryBlock({ name }) {
+    const content = ducks[name];
+  
+    if (!content) {
+      return <div>Summary not available for {name}</div>;
+    }
+  
+    return (
+      <div className="contentBlock" style={{textAlign: "left"}}>
+        <div style={{textAlign: "center"}}>Summary</div>
+        <div>Name: {content.Name}</div>
+        <div>Job: {content.Job}</div>
+        <div>Work: {content.Work}</div>
+        <div>Description: {content.Description}</div>
+      </div>
+    );
+  }
+
+
 
 function Header({ text }) {
   return (
@@ -46,11 +92,13 @@ function SidePanel({ onItemClick }) {
   );
 }
 
-function ContentBlock({ text }) {
+function SiteContent({ children }) {
   return (
-    <div className="contentBlock">
-      {text}
-    </div>
+  <div className="siteContent">
+    <ContentBox name={"Duck Dad"}/>
+    <ContentBox name={"Duck Mom"}/>
+    <ContentBox name={"Duck Brother"}/>
+  </div>
   );
 }
 
