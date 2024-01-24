@@ -53,7 +53,7 @@ const LoginWindow = () => {
   // Access the input values using the state variables (inputValue1 and inputValue2)
   const handleSubmit = () => {
     // Assuming data.login and data.password are defined somewhere
-    if (inputValue1 === data.login && inputValue2 === data.password) {
+    if (inputValue1 === data.login[1] || inputValue1 === data.login[2] && inputValue2 === data.password) {
       console.log("Logging in");
       setLoggedIn(true); // Set login status to true
     } else {
