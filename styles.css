@@ -1,99 +1,103 @@
-.header{
-    width: 75%;
-    height: 5%;
-    left: 25%;
-    background: #90e0ef;
-    position: absolute;
-    text-align: center;
-    border: #48cae4;
-    border-style: solid;
-    border-width: 1px;
-    border-left-width: 0px;
-}
-
-.siteContent{
-    position: absolute;
-    height: 95%;
-    width: 75%;
-    left: 25%;
-    top: 5%;
-    background:#ade8f4;
-    justify-content: center;
-    text-align: center;
-    overflow-y: scroll;
-}
-
-.head{
-    border-color: #48cae4;
-    border-style: solid;
-    border-width: 1px;
-    display: inline-block;
-    vertical-align: top;
-    background: #90e0ef;
-    text-align: center;
-
-    position: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: inherit;
-    top: 0px;
-    width: 100%;
-    height: 5%;
-}
-
-head:hover{
-    cursor: pointer;
-    background: #ade8f4;
-    border-radius: 2%;
-}
-
-.contentBlock{
-    width: 250px;
-    height: 350px;
-    border-color: #48cae4;
-    border-style: solid;
-    border-width: 1px;
-    display: inline-block;
-    vertical-align: top;
-    background: #90e0ef;
-    text-align: center;
-}
-
-.cell{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 7px;
-    width: 100%;
-    height: 3%
-}
-
-.cell:hover{
-    cursor: pointer;
-    background: #ade8f4;
-}
-
-.sidePanel{
-    background: #90e0ef;
-    border-color: #48cae4;
-    border-style: solid;
-    border-width: 1px;
-    border-top-width: 0px;
-    position: inherit;
-    top: 50px;
-    left: inherit;
-    height: 100%;
-    width: 25%;
-}
-
 body{
     font-family: 'Trebuchet MS';
     display: block;
-    background: #ffffff;
-    color: #03045e;
-
+    background: #443C68;
+    color: #000000;
     width: 100%;
     height: 100%;
+}
 
+@media (min-width: 1280px) {
+    
+}
+
+.header{
+    background: #E3FDFD;
+    text-align: left;
+    box-shadow: rgba(25, 48, 82, 0.1) 0rem
+}
+
+.box{
+    display: inline-flex;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+
+    height: 32px;
+    width: 32px;
+    margin-left: 10px;
+    box-shadow: rgba(25, 48, 82, 0.1) 0rem;
+
+    border-style: solid;
+    border-color: transparent;
+    border-width: 3px;
+    border-radius: 6px;
+}
+
+.box:hover{
+    background: #CBF1F5;
+    cursor: pointer;
+    box-shadow: rgba(25, 48, 82, 0.1) 0rem
+}
+
+.inline{
+    flex: 1 1 auto;
+    display: inline-flex;
+    margin-left: 10px;
+}
+
+.siteContent{
+    background: #CBF1F5;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.LoginWindow{
+    display: inline-block;
+
+    margin-top: 10px;
+
+    width: auto;
+    min-height: 10%;
+    height: auto;
+    background: #E3FDFD;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5%;
+    border-color: #E3FDFD;
+
+    text-align: center;
+    box-shadow: rgba(25, 48, 82, 0.1) 0rem;
+    overflow-x: hidden;
+}
+
+.input{
+    border: none;
+    outline: none;
+    display: inline;
+}
+
+.login{
+    text-align: left;
+    padding-left: 5px;
+}
+
+.button{
+    min-height: 60px;
+    min-width: 60%;
+    background: #ffffff;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.button:hover{
+    border-color: #CBF1F5;
+    border-style: solid;
+}
+
+.buttonText{
+    display: inline-block;
+    vertical-align: middle;
 }
