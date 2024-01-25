@@ -36,32 +36,27 @@ function SiteContent(){
 }
 
 const LoginWindow = () => {
-  // Declare state variables for each input field and login status
-  const [inputValue1, setInputValue1] = useState('');
-  const [inputValue2, setInputValue2] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-  // Event handlers to update the state when input values change
   const handleInputChange1 = (event) => {
-    setInputValue1(event.target.value);
+    setLogin(event.target.value);
   };
 
   const handleInputChange2 = (event) => {
-    setInputValue2(event.target.value);
+    setPassword(event.target.value);
   };
 
-  // Access the input values using the state variables (inputValue1 and inputValue2)
   const handleSubmit = () => {
-    // Assuming data.login and data.password are defined somewhere
-    if (inputValue1 === data.login[1] || inputValue1 === data.login[2] && inputValue2 === data.password) {
-      console.log("Logging in");
-      setLoggedIn(true); // Set login status to true
-    } else {
-      console.log("Invalid credentials");
-    }
-  };
+      if (login === data.login[1] || login === data.login[2]) {
+        if(password === data.password){
+          console.log("Logging in");
+          setLoggedIn(true);
+        }        
+      }
+  };    
 
-  // Render the LoginWindow conditionally based on login status
   return (
     <div>
       {!isLoggedIn && (
@@ -70,11 +65,11 @@ const LoginWindow = () => {
           <div>
             <p className="login"> 
               Username:
-              <input type="text" className="input" value={inputValue1} onChange={handleInputChange1} />
+              <input type="text" className="input" value={login} onChange={handleInputChange1} />
             </p>
             <p className="login"> 
               Password:
-              <input type="text" className="input" value={inputValue2} onChange={handleInputChange2} />
+              <input type="text" className="input" value={password} onChange={handleInputChange2} />
             </p>
           </div>
           <button className="button" onClick={handleSubmit}>
