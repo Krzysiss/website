@@ -6,39 +6,108 @@ import {useState} from 'react';
 npc = data.npc;
 
 export default function App() {
+  const [currentPageIndex, setCurrentPageIndex] = useState(1);
+
+  let content;
+  let text = "";
+  let buttonText;
+
+  switch(currentPageIndex){
+    case 0:
+      content = <LoginWindow/>;
+      text = "Quackk! - Game Design Doc"
+      buttonText = "Go back";
+      break;
+    case 1:
+      content = <FeatureBlock/>;
+      text = "Quackk!"
+      buttonText = "Login";
+      break;
+  }
+
+  const changeSite = () => {
+    setCurrentPageIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
+  };
+
   return (
     <body>
-      <Header/>
-      <SiteContent/>
+      <Header text={text}/>
+      <SiteContent content={content} />
+      <button onClick={changeSite} id="siteChange">{buttonText}</button>
+    </body>
+    
+  );
+}
+
+function DesignPage(){
+  return(
+    <body>
+      <SiteContent content={<LoginWindow/>}/>
     </body>
   );
 }
 
-function Header(){
+function MainPage(){
   return(
-    <div className="header">
-      <div className="box">
-        &#9776;
+    <body>
+      <SiteContent content={<FeatureBlock/>}/>    
+  </body>
+  );
+}
+
+function FeatureBlock(){
+  return(
+    <div id="featureBlock">
+      <h3 id="textBox">
+        Latest Features
+      </h3>
+      <div>
+
       </div>
-      <h2 className="inline">
-        Quackk!
-      </h2>
+      <div id="imageBox">
+
+      </div>
     </div>
   );
 }
 
-function SiteContent(){
-  return(
-    <div className="siteContent">
-      <LoginWindow/>
+function Header({ text }) {
+  const [isSidePanelHidden, setSidePanelHidden] = useState(false);
+
+  const toggleSidePanel = () => {
+    setSidePanelHidden(isSidePanelHidden);
+  };
+
+  return (
+    <div className="header">
+      <button className="box" onClick={toggleSidePanel}>
+        &#9776;
+      </button>
+      <h2 className="inline">{text}</h2>
     </div>
   );
+}
+
+function SiteContent({content}){
+  return(
+    <div className="siteContent">
+      {content}
+    </div>
+  );
+}
+
+function ContentBlock(){
+  <div className="contentBlock">
+
+  </div>
 }
 
 const LoginWindow = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setLoggedIn] = useState(false);
+
+  var display = "inherit";
 
   const handleInputChange1 = (event) => {
     setLogin(event.target.value);
@@ -53,13 +122,13 @@ const LoginWindow = () => {
         if(password === data.password){
           console.log("Logging in");
           setLoggedIn(true);
+          display = "none";
         }        
       }
   };    
 
   return (
-    <div>
-      {!isLoggedIn && (
+    <div style={{ display: isLoggedIn ? "none" : "inherit" }} >
         <div className="LoginWindow">
           <h3>Login</h3>
           <div>
@@ -75,8 +144,7 @@ const LoginWindow = () => {
           <button className="button" onClick={handleSubmit}>
             <h3 className="buttonText">Submit</h3>
           </button>
-        </div>
-      )}
+          </div>
     </div>
   );
 }
