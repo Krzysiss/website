@@ -7,9 +7,7 @@ body{
     height: 100%;
 }
 
-@media (max-width: 1200px) {
-    
-}
+
 
 .header{
     background: #E3FDFD;
@@ -121,12 +119,16 @@ body{
     cursor: pointer;
 }
 
+
 #featureBlock{
     display: inline-block;
 
     background: #E3FDFD;
 
     margin-top: 20px;
+
+    
+
 
     width: 95%;
     height: 320px;
@@ -141,15 +143,34 @@ body{
     width: 30%;
 }
 
+
+@media screen and (max-width: 540px) {
+    #imageBox{
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    #imageBox{
+        margin-left: 65%;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    #imageBox{
+        margin-left: 83%;
+    }
+}
+
 #imageBox{
-    position: absolute;
+    position:relative;
     display: inline-block;
     height: 280px;
     width: 280px;
     background: #CBF1F5;
-    margin-left: 57%;
     
-    top: 110px;
+
+    top: -40px;
     border-radius: 28px;
 }
 
