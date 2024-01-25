@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import "./phoneStyles.css";
 import data from "./password.json"
 import {useState} from 'react';
 

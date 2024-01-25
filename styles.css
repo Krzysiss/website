@@ -144,11 +144,7 @@ body{
 }
 
 
-@media screen and (max-width: 540px) {
-    #imageBox{
-        margin-left: 30%;
-    }
-}
+
 
 @media screen and (max-width: 1080px) {
     #imageBox{
