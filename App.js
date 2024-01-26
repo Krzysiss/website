@@ -20,7 +20,7 @@ export default function App() {
       buttonText = "Go back";
       break;
     case 1:
-      content = <FeatureBlock/>;
+      content = <GraphicBlock/>;
       text = "Quackk!"
       buttonText = "Login";
       break;
@@ -30,11 +30,14 @@ export default function App() {
     setCurrentPageIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
   };
 
+  let screen = window.innerWidth;
+
   return (
     <body>
       <Header text={text}/>
       <SiteContent content={content} />
       <button onClick={changeSite} id="siteChange">{buttonText}</button>
+      
     </body>
     
   );
@@ -51,23 +54,15 @@ function DesignPage(){
 function MainPage(){
   return(
     <body>
-      <SiteContent content={<FeatureBlock/>}/>    
+      <SiteContent content={<GraphicBlock/>}/>    
   </body>
   );
 }
 
-function FeatureBlock(){
+function GraphicBlock(){
   return(
-    <div id="featureBlock">
-      <h3 id="textBox">
-        Latest Features
-      </h3>
-      <div>
-
-      </div>
-      <div id="imageBox">
-
-      </div>
+    <div id="graphicBlock">
+      <img src={"./assets/websiteMockup.png"} id="mockup"/>
     </div>
   );
 }
