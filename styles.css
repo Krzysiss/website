@@ -138,37 +138,6 @@ body{
     padding-top: 0px;
 }
 
-#textBox{
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 30%;
-}
-
-@media screen and (min-width: 720px) {
-    #imageBox{
-        margin-left: 65%;
-        height: 280px;
-        width: 280px;
-    }
-}
-
-@media screen and (min-width: 1800px) {
-    #imageBox{
-        margin-left: 83%;
-    }
-}
-
-#imageBox{
-    position:relative;
-    display: inline-block;
-    height: 280px;
-    width: 280px;
-    background: #CBF1F5;
-    
-    top: -40px;
-    border-radius: 28px;
-}
-
 #siteChange{
     position: absolute;
     top: 20px;
@@ -182,17 +151,5 @@ body{
 }
 
 #siteChange:hover{
-    cursor: pointer;
-    
-    
-}
-
-#background{
-    height:70%;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    top: auto;
-    padding-top: 10px;
-    background: #6fcc5a;
+    cursor: pointer;   
 }
