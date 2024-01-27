@@ -29,6 +29,10 @@ export default function App() {
     setCurrentPageIndex((prevIndex) => (prevIndex === 1 ? 0 : 1));
   };
 
+  const changeSiteSpec = (index) => {
+    setCurrentPageIndex(index);
+  };
+
   return (
     <body>
       <Header text={text}/>
