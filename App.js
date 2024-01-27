@@ -7,6 +7,7 @@ npc = data.npc;
 
 export default function App() {
   const [currentPageIndex, setCurrentPageIndex] = useState(1);
+  const [logging, setLogged] = useState(false);
 
   let content;
   let text = "";
@@ -27,17 +28,81 @@ export default function App() {
 
   const changeSite = () => {
     setCurrentPageIndex((prevIndex) => (prevIndex === 1 ? 0 : 1));
+
+    switch(currentPageIndex){
+      case 0:
+        setLoggedIn(false);
+        break;
+    }
+    
   };
 
   const changeSiteSpec = (index) => {
     setCurrentPageIndex(index);
   };
 
+  const toggleLogin = () => {
+    switch(currentPageIndex)
+    {
+      case 0:
+        changeSite();
+        break;
+      case 1:
+        setLogged(() => (logging ? false : true));
+        break;
+    }   
+  };
+
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoggedIn, setLoggedIn] = useState(false);
+
+  var display = "inherit";
+
+  const handleInputChange1 = (event) => {
+    setLogin(event.target.value);
+  };
+
+  const handleInputChange2 = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = () => {
+      if (login === data.login[1] || login === data.login[2]) {
+        if(password === data.password){
+          console.log("Logging in");
+          setLoggedIn(true);
+          display = "none";
+          changeSite();
+        }        
+      }
+  };    
+
   return (
     <body>
       <Header text={text}/>
       <SiteContent content={content} />
-      <button onClick={changeSite} id="siteChange">{buttonText}</button>  
+      <button onClick={toggleLogin} id="siteChange">{buttonText}</button>  
+      <div style={{display: !logging ? "none" : "inherit"}}>
+        <div style={{ display: isLoggedIn ? "none" : "inherit" }} >
+          <div className="LoginWindow">
+            <h3>Login</h3>
+            <div id="dataBox">
+              <p className="login"> 
+                Username:
+                <input type="text" className="input" value={login} onChange={handleInputChange1} />
+              </p>
+              <p className="login"> 
+                Password: 
+                <input type="text" className="input" value={password} onChange={handleInputChange2} />
+              </p>
+            </div>
+            <button className="button" onClick={handleSubmit}>
+              <h3 className="buttonText">Submit</h3>
+            </button>
+          </div>
+        </div>                            
+      </div>
     </body>
   );
 }
@@ -45,7 +110,7 @@ export default function App() {
 function DesignPage(){
   return(
     <div>
-      <LoginWindow/>
+      
     </div>
   );
 }
@@ -99,53 +164,6 @@ function SiteContent({content}){
       <div className="contentBox">
         {content}
       </div>
-    </div>
-  );
-}
-
-const LoginWindow = () => {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoggedIn, setLoggedIn] = useState(false);
-
-  var display = "inherit";
-
-  const handleInputChange1 = (event) => {
-    setLogin(event.target.value);
-  };
-
-  const handleInputChange2 = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = () => {
-      if (login === data.login[1] || login === data.login[2]) {
-        if(password === data.password){
-          console.log("Logging in");
-          setLoggedIn(true);
-          display = "none";
-        }        
-      }
-  };    
-
-  return (
-    <div style={{ display: isLoggedIn ? "none" : "inherit" }} >
-        <div className="LoginWindow">
-          <h3>Login</h3>
-          <div id="dataBox">
-            <p className="login"> 
-              Username:
-              <input type="text" className="input" value={login} onChange={handleInputChange1} />
-            </p>
-            <p className="login"> 
-              Password: 
-              <input type="text" className="input" value={password} onChange={handleInputChange2} />
-            </p>
-          </div>
-          <button className="button" onClick={handleSubmit}>
-            <h3 className="buttonText">Submit</h3>
-          </button>
-          </div>
     </div>
   );
 }
