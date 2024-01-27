@@ -5,13 +5,19 @@ import {useState} from 'react';
 
 npc = data.npc;
 
+//Main Logic
+
 export default function App() {
   const [currentPageIndex, setCurrentPageIndex] = useState(1);
   const [logging, setLogged] = useState(false);
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoggedIn, setLoggedIn] = useState(false);
 
   let content;
   let text = "";
-  let buttonText;
+  var buttonText;
+  var display = "inherit";
 
   switch(currentPageIndex){
     case 0:
@@ -22,42 +28,31 @@ export default function App() {
     case 1:
       content = <MainPage/>;
       text = "Quackk!"
-      buttonText = "Login";
+
+      if(isLoggedIn){
+        buttonText = "Docs";
+      }else{
+        buttonText = "Login";
+      }
       break;
   }
 
   const changeSite = () => {
-    setCurrentPageIndex((prevIndex) => (prevIndex === 1 ? 0 : 1));
-
     switch(currentPageIndex){
       case 0:
-        setLoggedIn(false);
-        break;
-    }
-    
-  };
-
-  const changeSiteSpec = (index) => {
-    setCurrentPageIndex(index);
-  };
-
-  const toggleLogin = () => {
-    switch(currentPageIndex)
-    {
-      case 0:
-        changeSite();
+        buttonText = "Docs";
+        setCurrentPageIndex(1);
         break;
       case 1:
-        setLogged(() => (logging ? false : true));
+        if(!isLoggedIn){
+          setLogged(() => (logging ? false : true));
+        }else{
+          
+          setCurrentPageIndex(0);
+        }
         break;
-    }   
+    }
   };
-
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoggedIn, setLoggedIn] = useState(false);
-
-  var display = "inherit";
 
   const handleInputChange1 = (event) => {
     setLogin(event.target.value);
@@ -73,7 +68,7 @@ export default function App() {
           console.log("Logging in");
           setLoggedIn(true);
           display = "none";
-          changeSite();
+          setCurrentPageIndex(0);
         }        
       }
   };    
@@ -82,7 +77,7 @@ export default function App() {
     <body>
       <Header text={text}/>
       <SiteContent content={content} />
-      <button onClick={toggleLogin} id="siteChange">{buttonText}</button>  
+      <button onClick={changeSite} id="siteChange">{buttonText}</button>  
       <div style={{display: !logging ? "none" : "inherit"}}>
         <div style={{ display: isLoggedIn ? "none" : "inherit" }} >
           <div className="LoginWindow">
@@ -104,31 +99,6 @@ export default function App() {
         </div>                            
       </div>
     </body>
-  );
-}
-
-function DesignPage(){
-  return(
-    <div>
-      
-    </div>
-  );
-}
-
-function ContentBlock({text, source}){
-  return(
-    <div className="contentBlock">
-      <div>{text} </div>
-      <div className="imageBox"><img src={source} className="contentImg"/></div>
-    </div>
-  );
-}
-
-function MainPage(){
-  return(
-    <div className="contentBox">
-      
-    </div>
   );
 }
 
@@ -164,6 +134,33 @@ function SiteContent({content}){
       <div className="contentBox">
         {content}
       </div>
+    </div>
+  );
+}
+
+//Site Elements
+
+function MainPage(){
+  return(
+    <div className="contentBox">
+      
+    </div>
+  );
+}
+
+function DesignPage(){
+  return(
+    <div>
+      
+    </div>
+  );
+}
+
+function ContentBlock({text, source}){
+  return(
+    <div className="contentBlock">
+      <div>{text} </div>
+      <div className="imageBox"><img src={source} className="contentImg"/></div>
     </div>
   );
 }
