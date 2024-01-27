@@ -14,54 +14,59 @@ export default function App() {
 
   switch(currentPageIndex){
     case 0:
-      content = <LoginWindow/>;
+      content = <DesignPage/>;
       text = "Quackk! - Game Design Doc"
       buttonText = "Go back";
       break;
     case 1:
-      content = <GraphicBlock/>;
+      content = <MainPage/>;
       text = "Quackk!"
       buttonText = "Login";
       break;
   }
 
   const changeSite = () => {
-    setCurrentPageIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
+    setCurrentPageIndex((prevIndex) => (prevIndex === 1 ? 0 : 1));
   };
-
-  let screen = window.innerWidth;
 
   return (
     <body>
       <Header text={text}/>
       <SiteContent content={content} />
-      <button onClick={changeSite} id="siteChange">{buttonText}</button>
-      
+      <button onClick={changeSite} id="siteChange">{buttonText}</button>  
     </body>
-    
   );
 }
 
 function DesignPage(){
   return(
-    <body>
-      <SiteContent content={<LoginWindow/>}/>
-    </body>
+    <div>
+      <LoginWindow/>
+    </div>
+  );
+}
+
+function ContentBlock({text, source}){
+  return(
+    <div className="contentBlock">
+      <div>{text} </div>
+      <div className="imageBox"><img src={source} className="contentImg"/></div>
+    </div>
   );
 }
 
 function MainPage(){
   return(
-    <body>
-      <SiteContent content={<GraphicBlock/>}/>    
-  </body>
+    <div className="contentBox">
+      
+    </div>
   );
 }
 
 function GraphicBlock(){
   return(
     <div id="graphicBlock">
-      <img src={"./assets/websiteMockup.png"} id="mockup"/>
+      <img src={"https://github.com/Krzysiss/website/blob/main/assets/websiteMockup.png?raw=true"} id="mockup"/>
     </div>
   );
 }
@@ -86,15 +91,12 @@ function Header({ text }) {
 function SiteContent({content}){
   return(
     <div className="siteContent">
-      {content}
+      <GraphicBlock/>  
+      <div className="contentBox">
+        {content}
+      </div>
     </div>
   );
-}
-
-function ContentBlock(){
-  <div className="contentBlock">
-
-  </div>
 }
 
 const LoginWindow = () => {
@@ -126,13 +128,13 @@ const LoginWindow = () => {
     <div style={{ display: isLoggedIn ? "none" : "inherit" }} >
         <div className="LoginWindow">
           <h3>Login</h3>
-          <div>
+          <div id="dataBox">
             <p className="login"> 
               Username:
               <input type="text" className="input" value={login} onChange={handleInputChange1} />
             </p>
             <p className="login"> 
-              Password:
+              Password: 
               <input type="text" className="input" value={password} onChange={handleInputChange2} />
             </p>
           </div>
