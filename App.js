@@ -14,6 +14,7 @@ export default function App() {
   const [password, setPassword] = useState('');
   const [isLoggedIn, setLoggedIn] = useState(false);
 
+  let sidePanel;
   let content;
   let text = "";
   var buttonText;
@@ -24,10 +25,12 @@ export default function App() {
       content = <DesignPage/>;
       text = "Quackk! - Game Design Doc"
       buttonText = "Go back";
+      sidePanel = <DocSidePanel/>
       break;
     case 1:
       content = <MainPage/>;
       text = "Quackk!"
+      sidePanel = <MainSidepanel/>
 
       if(isLoggedIn){
         buttonText = "Docs";
@@ -47,7 +50,6 @@ export default function App() {
         if(!isLoggedIn){
           setLogged(() => (logging ? false : true));
         }else{
-          
           setCurrentPageIndex(0);
         }
         break;
@@ -98,6 +100,7 @@ export default function App() {
           </div>
         </div>                            
       </div>
+      <Footer/>
     </body>
   );
 }
@@ -138,6 +141,30 @@ function SiteContent({content}){
   );
 }
 
+function Footer(){
+  return (
+    <div id="footer">
+
+    </div>
+  );
+}
+
+function MainSidepanel(){
+  return (
+    <div className="SidePanel">
+
+    </div>
+  );
+}
+
+function DocSidePanel(){
+  return (
+    <div className="SidePanel">
+
+    </div>
+  );
+}
+
 //Site Elements
 
 function MainPage(){
@@ -150,7 +177,7 @@ function MainPage(){
 
 function DesignPage(){
   return(
-    <div>
+    <div className="contentBox">
       
     </div>
   );
