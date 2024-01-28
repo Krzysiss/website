@@ -1,4 +1,4 @@
-body{
+#body{
     font-family: 'Trebuchet MS';
     display: block;
     background: transparent;
@@ -228,4 +228,10 @@ body{
 
 .imageBox{
     display: inline-block;
+}
+
+footer{
+    background: #000000;
+    display: block; /* or inline-block, flex, etc. */
+    visibility: visible;
 }

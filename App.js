@@ -75,7 +75,7 @@ export default function App() {
   };    
 
   return (
-    <body>
+    <div id="body">
       <Header text={text}/>
       <SiteContent content={content} />
       <button onClick={changeSite} id="siteChange">{buttonText}</button>  
@@ -99,8 +99,10 @@ export default function App() {
           </div>
         </div>                            
       </div>
-      <Footer/>
-    </body>
+      <footer>
+        tak
+      </footer>
+    </div>
   );
 }
 
@@ -154,7 +156,7 @@ function Header({ text }) {
 function Footer(){
   return (
     <div id="footer">
-
+      rtak
     </div>
   );
 }
