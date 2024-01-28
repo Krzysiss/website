@@ -174,7 +174,7 @@
 }
 
 @media only screen and (max-width: 400px) {
-    .contentBlock {
+    .contentBlock, .contentButton {
         width: 100px;
         height: 100px;
     }
@@ -186,7 +186,7 @@
 }
 
 @media only screen and (min-width: 400px) {
-    .contentBlock {
+    .contentBlock, .contentButton {
         width: 200px;
         height: 200px;
     }
@@ -218,7 +218,7 @@
 .contentImg{
     display: inline-block;
     height: 100%;
-    width: 100%;
+    width: auto;
 }
 
 .contentBox{
@@ -234,4 +234,16 @@ footer{
     background: #000000;
     display: block; /* or inline-block, flex, etc. */
     visibility: visible;
+}
+
+.contentButton{
+    border-color: transparent;
+    background-color: transparent;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.contentButton:hover{
+    cursor: pointer;
 }

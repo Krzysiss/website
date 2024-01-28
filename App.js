@@ -1,13 +1,14 @@
 import React from "react";
 import "./styles.css";
-import data from "./password.json"
+import data from "./password.json";
+import images from "./images.json";
 import {useState} from 'react';
 
 npc = data.npc;
 
 //Main Logic
 export default function App() {
-  const [currentPageIndex, setCurrentPageIndex] = useState(1);
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const [logging, setLogged] = useState(false);
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
@@ -186,9 +187,18 @@ function MainPage(){
 }
 
 function DesignPage(){
+  const [currentPageIndex, setCurrentPageIndex] = useState(0);
+
+  const changeSite = (index) => {
+    setCurrentPageIndex(index);
+  }
+
   return (
     <div className="contentBox">
-      
+      <button onClick={""} className="contentButton"><ContentBlock text={"Player"} source={images.DesignDoc.page0.Player}/></button>
+      <button onClick={""} className="contentButton"><ContentBlock text={"Map"} source={images.DesignDoc.page0.Map}/></button>
+      <button onClick={""} className="contentButton"><ContentBlock text={"Npc"} source={images.DesignDoc.page0.Npc}/></button>
+      <button onClick={""} className="contentButton"><ContentBlock text={"Items"} source={images.DesignDoc.page0.Items}/></button>
     </div>
   );
 }
