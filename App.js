@@ -6,7 +6,6 @@ import {useState} from 'react';
 npc = data.npc;
 
 //Main Logic
-
 export default function App() {
   const [currentPageIndex, setCurrentPageIndex] = useState(1);
   const [logging, setLogged] = useState(false);
@@ -105,14 +104,36 @@ export default function App() {
   );
 }
 
+//Build Elements
 function GraphicBlock(){
-  return(
+  return (
     <div id="graphicBlock">
-      <img src={"https://github.com/Krzysiss/website/blob/main/assets/websiteMockup.png?raw=true"} id="mockup"/>
+      <img src={"./assets/websiteMockup.png"} id="mockup"/>
     </div>
   );
 }
 
+function SiteContent({content}){
+  return (
+    <div className="siteContent">
+      <GraphicBlock/>  
+      <div className="contentBox">
+        {content}
+      </div>
+    </div>
+  );
+}
+
+function ContentBlock({text, source}){
+  return (
+    <div className="contentBlock">
+      <div>{text} </div>
+      <div className="imageBox"><img src={source} className="contentImg"/></div>
+    </div>
+  );
+}
+
+//Site Elements
 function Header({ text }) {
   const [isSidePanelHidden, setSidePanelHidden] = useState(false);
 
@@ -126,17 +147,6 @@ function Header({ text }) {
         &#9776;
       </button>
       <h2 className="inline">{text}</h2>
-    </div>
-  );
-}
-
-function SiteContent({content}){
-  return(
-    <div className="siteContent">
-      <GraphicBlock/>  
-      <div className="contentBox">
-        {content}
-      </div>
     </div>
   );
 }
@@ -165,29 +175,18 @@ function DocSidePanel(){
   );
 }
 
-//Site Elements
-
 function MainPage(){
-  return(
+  return (
     <div className="contentBox">
-      
+
     </div>
   );
 }
 
 function DesignPage(){
-  return(
+  return (
     <div className="contentBox">
       
-    </div>
-  );
-}
-
-function ContentBlock({text, source}){
-  return(
-    <div className="contentBlock">
-      <div>{text} </div>
-      <div className="imageBox"><img src={source} className="contentImg"/></div>
     </div>
   );
 }

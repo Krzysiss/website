@@ -62,10 +62,11 @@ body{
 
     top: 20%;
     
-    left: 45%;
-    right: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    width: 180px;
+    width: 200px;
     min-height: 10%;
     height: auto;
     background: #6fcc5a;
@@ -84,7 +85,9 @@ body{
     outline: none;
     display: inline;
     background: #258d44;
-    width: auto;
+    width: 180px;
+
+    border-radius: 18px;
 }
 
 .login{
